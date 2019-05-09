@@ -1,3 +1,4 @@
+
 plugins {
     id 'war'
 }
@@ -17,13 +18,12 @@ dependencies {
 	compile 'org.owasp.encoder:encoder:+'
 	compile 'org.owasp.encoder:encoder-jsp:+'
 	
-	// spring framework
-	compile 'org.springframework:spring-webmvc:5.+'
-	compile 'org.springframework:spring-jdbc:5.+'
-	
 	// log4j 2	
 	compile 'org.apache.logging.log4j:log4j-api:2.+'
-	compile 'org.apache.logging.log4j:log4j-core:2.+'	
+	compile 'org.apache.logging.log4j:log4j-core:2.+'
+	
+	// reflections
+	compile 'org.reflections:reflections:+'	
 }
 
 // clear
@@ -68,4 +68,3 @@ task dist(dependsOn:makedist, type:Sync) {
 	into "$appDir"
 }
 
-ant.importBuild 'build.xml'
